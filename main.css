@@ -1,0 +1,180 @@
+html, body {
+    background-color: #E7E7E7;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.title, .topnav, .calculator, .checkbox-label {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.title {
+    font-size: 4vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.2em 0;
+}
+
+.logo {
+    height: 1.5em;
+    margin-right: 20px;
+}
+
+.topnav {
+    background-color: #339989;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.topnav a {
+    padding: 0.7em 1em;
+    color: #131515;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+.topnav a:hover, .topnav a.active {
+    background-color: #E7E7E7;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #7DE2D1;
+}
+
+.main, .h1centered, .h1alt, .h2alt {
+    position: relative;
+    text-align: center;
+    color: black;
+    z-index: 2;
+}
+
+.main {
+    min-height: 100vh;
+    background-image: url('Resources/Background.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+.main .centered, .main .off {
+    position: relative;
+    z-index: 2;
+    color: white; 
+}
+
+.centered{
+	position: relative;
+	z-index: 2;
+	left:-30vw;
+	top:5vw;
+	font-size:2vw;
+}
+	
+
+.off{
+	position: relative;
+	z-index: 2;
+	left:4vw;
+	top:2.5vw;
+	width:32vw;
+	font-size:1vw;
+	
+}
+.main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(100, 100, 100, 0.5); 
+    z-index: 1;
+}
+
+.calculator {
+    flex-direction: column;
+    padding: 1em;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+input[type="number"], button {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #339989;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7DE2D1;
+}
+
+
+.footer {
+  position: fixed;
+  left: 0; /* Align the footer to the left boundary of the page */
+  right: 0; /* Align the footer to the right boundary of the page */
+  bottom: 0; /* Align the footer to the bottom of the page */
+  color: white;
+  text-align: center; /* Center the text inside the footer */
+  padding: .05vw 0; /* Add some padding above and below the text */
+  background-color: #339989; /* Example background color */
+  font-size: .8em;
+  z-index: 2;
+}
+
+
+@media only screen and (max-width: 1000px) {
+.centered{
+	position: relative;
+	z-index: 2;
+	left:0vw;
+	top:0vw;
+	font-size:2vw;
+}
+	
+
+.off{
+	position: relative;
+	z-index: 2;
+	left:25vw;
+	top:0vw;
+	width:50vw;
+	font-size:2vw;
+	
+}
+}
+
+@media only screen and (max-width: 600px) {
+    .calculator {
+        width: 95%;
+    }
+}

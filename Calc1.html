@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Math Wizard</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="icon" href="Resources/Logo.png">
+</head>
+<body>
+<div class="title">
+    <img class="logo" src="Resources/Logo.png" alt="Logo">
+    <span class="title-text">MATH WIZARD</span>
+</div>
+<div class="topnav">
+  <a href="Index.html">Home</a>
+  <a class="active" href="Calc1.html">Binary Expansion</a>
+  <a href="Calc2.html">Combinations/Permutations </a>
+  <a href="Calc3.html">Prime Numbers</a>
+</div>
+<h1 class="h1centered">Binary Expansion Calculator</h1>
+<div class="calculator">
+  <h1 class="h1alt">Binary/Decimal Conversion Calculator</h1>
+  <div class="conversion-section">
+    <h2 class="h2alt">Decimal to Binary</h2>
+    <input type="number" id="decimalInput" placeholder="Enter a decimal number">
+    <button onclick="convertToBinary()">Convert to Binary</button>
+    <p id="binaryOutput"></p>
+  </div>
+  <div class="conversion-section">
+    <h2 class="h2alt">Binary to Decimal</h2>
+    <input type="number" id="binaryInput" placeholder="Enter a binary number">
+    <button onclick="convertToDecimal()">Convert to Decimal</button>
+    <p id="decimalOutput"></p>
+  </div>
+</div>
+<div class="footer"><p>&copy Kyle Plovie 2024</p></div>
+</body>
+<script src="script.js"></script>
+</html>
