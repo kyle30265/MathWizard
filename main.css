@@ -183,6 +183,34 @@ button:hover {
 
 @media only screen and (max-width: 600px) {
     .calculator {
+		padding: 1em;
         width: 95%;
+		height:auto;
     }
+	input[type="number"], button {
+    width: 90%;
+    margin: 5px auto;
+    display: block;
+}
+
+input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #339989;
+    color: white;
+    cursor: pointer;
+}
+
+.h1centered, .h1alt, .h2alt {
+	padding:0px;
+	margin:.5em;
+	}
+
 }
