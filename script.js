@@ -114,3 +114,63 @@ function primeFactorization() {
   }
   factorOutput.innerText = `Prime factors: ${factors.join(' × ')}`;
 }
+
+function createMatrixInput() {
+    const size = document.getElementById('size').value;
+    const matrixSection = document.getElementById('matrixSection');
+    matrixSection.innerHTML = ''; // Clear previous matrix
+
+    for (let i = 0; i < size; i++) {
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'matrix-row';
+        for (let j = 0; j < size; j++) {
+            const input = document.createElement('input');
+			input.className = 'g-input';
+            input.type = 'number';
+            input.min = '0';
+            input.max = '1';
+            input.value = '0';
+            input.id = `matrix-${i}-${j}`;
+            rowDiv.appendChild(input);
+        }
+        matrixSection.appendChild(rowDiv);
+    }
+
+    document.getElementById('drawGraphButton').style.display = 'block';
+}
+
+function drawGraph() {
+    const size = parseInt(document.getElementById('size').value);
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear previous graph
+    const radius = 20; // Radius of the circles representing the vertices
+    const angleIncrement = 2 * Math.PI / size; // Angle increment for placing vertices in a circle
+
+    let positions = []; // Store positions of each vertex
+
+    // Draw vertices
+    for (let i = 0; i < size; i++) {
+        const x = canvas.width / 2 + Math.cos(i * angleIncrement) * 100; // Adjust 100 for distance from center
+        const y = canvas.height / 2 + Math.sin(i * angleIncrement) * 100;
+        positions.push([x, y]);
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.fillText(i, x-5, y+5); // Label vertices
+        ctx.stroke();
+    }
+
+    // Draw edges
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size; j++) {
+            const val = document.getElementById(`matrix-${i}-${j}`).value;
+            if (val == '1') { // There is an edge
+                ctx.beginPath();
+                ctx.moveTo(positions[i][0], positions[i][1]);
+                ctx.lineTo(positions[j][0], positions[j][1]);
+                ctx.stroke();
+            }
+        }
+    }
+}
