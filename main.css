@@ -214,3 +214,68 @@ button {
 	}
 
 }
+
+.calculator-2 {
+    flex-direction: column;
+    padding: 1em;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: 1vw;
+}
+.calculator-2 {
+    flex-direction: column;
+    padding: 1em;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: 1vw;
+}
+
+#matrixSection {
+    display: flex;
+    flex-wrap: wrap; /* Allows matrix rows to wrap */
+    max-height: 500px; /* Adjust based on your preference */
+    overflow-y: auto; /* Adds a scrollbar if the content overflows */
+    margin-top: 20px;
+}
+
+
+
+#container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#inputSection {
+	Width: 500px;
+	height: 800px;
+	
+}
+
+#inputSection, #graphSection {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.matrix-row {
+    display: flex; /* This makes sure all inputs in a row are in one line */
+    justify-content: flex-start; /* Aligns the inputs to the start of the row */
+    width: 100%; /* Ensures the row spans the full width of the matrix section */
+}
+
+.g-input {
+    width: 40px; /* Adjust based on your preference */
+    margin-right: 10px; /* Space between inputs */
+    text-align: center; /* Aligns the text to center */
+}
+
+#graphCanvas {
+    display: block;
+    background-color: #f9f9f9;
+    margin: auto; /* Center the canvas */
+}
